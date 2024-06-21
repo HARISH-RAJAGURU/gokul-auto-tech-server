@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-size: 16px;
+            color: #333333;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-accept {
+            background-color: #4CAF50;
+        }
+        .button-reject {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <div class="logo">
+        <img src="cid:gat_logo" alt="">
+        <h1 style="margin-top: 20px;">Gokul Auto Tech</h1>
+    </div>
+    <div class="content">
+        <p th:text="'Hi'+' '+${userName}+','"></p>
+        <p>Below are the details of the new member:</p>
+        <p><strong>Name:</strong> <span th:text="${newUserName}"></span></p>
+        <p><strong>Division:</strong> <span th:text="${newUserDivision}"></span></p>
+        <p><strong>Role:</strong> <span th:text="${newUserRole}"></span></p>
+    </div>
+    <div class="buttons">
+        <a th:href="${acceptUrl}" class="button button-accept">Accept</a>
+        <a th:href="${rejectUrl}" class="button button-reject">Reject</a>
+    </div>
+</div>
+</body>
+</html>
